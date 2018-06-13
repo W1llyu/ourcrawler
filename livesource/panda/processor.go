@@ -1,15 +1,15 @@
 package panda
 
 import (
+	"github.com/PuerkitoBio/goquery"
 	"github.com/W1llyu/ourcrawler/collector"
 	"github.com/W1llyu/ourcrawler/downloader"
-	"strings"
-	"github.com/PuerkitoBio/goquery"
-	"github.com/W1llyu/ourcrawler/util"
 	"github.com/W1llyu/ourcrawler/livesource"
+	"github.com/W1llyu/ourcrawler/util"
+	"strings"
 )
 
-type Processor struct {}
+type Processor struct{}
 
 func (p *Processor) Process(response *downloader.Response) (collector.ResultItems, error) {
 	resultItem := collector.ResultItems{

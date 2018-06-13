@@ -2,8 +2,8 @@ package main
 
 import (
 	"github.com/W1llyu/ourcrawler/crawler"
-	"github.com/W1llyu/ourcrawler/scheduler"
 	"github.com/W1llyu/ourcrawler/initializer"
+	"github.com/W1llyu/ourcrawler/scheduler"
 )
 
 var (

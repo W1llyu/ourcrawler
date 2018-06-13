@@ -1,15 +1,15 @@
 package livesource
 
 import (
-	"sort"
 	"github.com/W1llyu/ourcrawler/collector"
+	"sort"
 	"time"
 )
 
 type LiveRoom struct {
-	Title string `json:"title"`
-	Anchor string `json:"anchor"`
-	AudienceCount int `json:"audience_count"`
+	Title         string `json:"title"`
+	Anchor        string `json:"anchor"`
+	AudienceCount int    `json:"audience_count"`
 }
 
 type By func(l1, l2 *LiveRoom) bool
@@ -17,14 +17,14 @@ type By func(l1, l2 *LiveRoom) bool
 func (by By) Sort(liveRooms []LiveRoom) {
 	ps := &LiveRoomSorter{
 		liveRooms: liveRooms,
-		by:      by,
+		by:        by,
 	}
 	sort.Sort(ps)
 }
 
 type LiveRoomSorter struct {
 	liveRooms []LiveRoom
-	by      func(l1, l2 *LiveRoom) bool
+	by        func(l1, l2 *LiveRoom) bool
 }
 
 func (s *LiveRoomSorter) Len() int {
@@ -45,7 +45,7 @@ func PackResultItem(resultItem *collector.ResultItems, liveRooms []LiveRoom, gam
 	}
 	By(sortFunc).Sort(liveRooms)
 	if 10 < len(liveRooms) {
-		liveRooms = liveRooms[0: 10]
+		liveRooms = liveRooms[0:10]
 	}
 	totalCount := 0
 	for _, liveRoom := range liveRooms {

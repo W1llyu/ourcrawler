@@ -7,7 +7,7 @@ import (
 	"github.com/W1llyu/ourjson"
 )
 
-type Processor struct {}
+type Processor struct{}
 
 func (p *Processor) Process(response *downloader.Response) (collector.ResultItems, error) {
 	resultItem := collector.ResultItems{

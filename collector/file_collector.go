@@ -1,14 +1,14 @@
 package collector
 
 import (
-	"errors"
-	"os"
-	"encoding/json"
 	"bytes"
-	"fmt"
-	"time"
 	"crypto/md5"
+	"encoding/json"
+	"errors"
+	"fmt"
 	"io/ioutil"
+	"os"
+	"time"
 )
 
 type FileCollector struct {

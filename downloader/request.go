@@ -1,9 +1,9 @@
 package downloader
 
 import (
+	"bytes"
 	"net/http"
 	"net/url"
-	"bytes"
 )
 
 func BuildFormPostRequest(requestUrl string, params map[string]string) *http.Request {

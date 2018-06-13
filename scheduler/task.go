@@ -1,20 +1,20 @@
 package scheduler
 
 import (
-	"github.com/W1llyu/ourcrawler/downloader"
-	"github.com/W1llyu/ourcrawler/collector"
-	"github.com/W1llyu/ourcrawler/processor"
-	"net/http"
 	"errors"
 	"fmt"
+	"github.com/W1llyu/ourcrawler/collector"
+	"github.com/W1llyu/ourcrawler/downloader"
+	"github.com/W1llyu/ourcrawler/processor"
 	"log"
+	"net/http"
 )
 
 type Task struct {
-	Request *http.Request
+	Request    *http.Request
 	Downloader downloader.Downloader
-	Collector collector.Collector
-	Processor processor.Processor
+	Collector  collector.Collector
+	Processor  processor.Processor
 }
 
 func (t *Task) Run() {
@@ -44,7 +44,7 @@ func (t *Task) Run() {
 	}
 }
 
-func infof(format string, a ...interface {}) {
+func infof(format string, a ...interface{}) {
 	log.Printf("[DOWNLOADER][INFO] %s", fmt.Sprintf(format, a...))
 }
 

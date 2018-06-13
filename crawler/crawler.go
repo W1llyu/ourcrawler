@@ -2,8 +2,8 @@ package crawler
 
 import (
 	"github.com/W1llyu/ourcrawler/scheduler"
-	"time"
 	"log"
+	"time"
 )
 
 type Crawler struct {
@@ -20,7 +20,7 @@ func GetCrawler() *Crawler {
 
 func EnqueueTask(task *scheduler.Task) {
 	select {
-	case <- time.After(time.Second * 10):
+	case <-time.After(time.Second * 10):
 		log.Printf("[CRAWLER][ERROR] task enqueue timeout")
 	case crw.ch <- task:
 		log.Println("[CRAWLER][SUCCESS] task enqueue success")

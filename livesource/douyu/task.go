@@ -1,9 +1,9 @@
 package douyu
 
 import (
+	"github.com/W1llyu/ourcrawler/collector"
 	"github.com/W1llyu/ourcrawler/scheduler"
 	"net/http"
-	"github.com/W1llyu/ourcrawler/collector"
 )
 
 func NewTask(url string) *scheduler.Task {

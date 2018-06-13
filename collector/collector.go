@@ -13,13 +13,13 @@ type Collector interface {
 }
 
 type ResultItems struct {
-	Results map[string]interface {}
+	Results map[string]interface{}
 	Request *http.Request
 }
 
-func (r *ResultItems) Put(key string, value interface {}) {
+func (r *ResultItems) Put(key string, value interface{}) {
 	if r.Results == nil {
-		r.Results = make(map[string]interface {})
+		r.Results = make(map[string]interface{})
 	}
 	r.Results[key] = value
 }

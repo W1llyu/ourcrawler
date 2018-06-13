@@ -1,12 +1,12 @@
 package downloader
 
 import (
-	"net/http"
-	"net"
-	"time"
 	"fmt"
 	"io/ioutil"
 	"log"
+	"net"
+	"net/http"
+	"time"
 )
 
 var (
@@ -26,11 +26,11 @@ func NewNetHttpDownloader() *NetHttpDownloader {
 		HttpClient: &http.Client{
 			Transport: &http.Transport{
 				Dial: func(netw, addr string) (net.Conn, error) {
-					conn, err := net.DialTimeout(netw, addr, time.Second * 30)    // 建立连接超时
+					conn, err := net.DialTimeout(netw, addr, time.Second*30) // 建立连接超时
 					if err != nil {
 						return nil, err
 					}
-					conn.SetDeadline(time.Now().Add(time.Second * 30))   // 发送接收数据超时
+					conn.SetDeadline(time.Now().Add(time.Second * 30)) // 发送接收数据超时
 					return conn, nil
 				},
 				ResponseHeaderTimeout: time.Second * 30,
@@ -52,13 +52,13 @@ func (n *NetHttpDownloader) Download(request *http.Request) *Response {
 		infof("Download %s Ok", request.URL.String())
 	}
 	return &Response{
-		Request: request,
-		Body: body,
+		Request:    request,
+		Body:       body,
 		StatusCode: uint(response.StatusCode),
 	}
 }
 
-func infof(format string, a ...interface {}) {
+func infof(format string, a ...interface{}) {
 	log.Printf("[DOWNLOADER][INFO] %s", fmt.Sprintf(format, a...))
 }
 

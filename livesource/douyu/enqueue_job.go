@@ -10,7 +10,7 @@ const (
 )
 
 type Job struct {
-	url string
+	url  string
 	spec string
 }
 
@@ -24,7 +24,7 @@ func (j *Job) Spec() string {
 }
 
 func NewJobs() []scheduler.Job {
-	return []scheduler.Job {
+	return []scheduler.Job{
 		&Job{"https://www.douyu.com/directory/game/DOTA2", globalSpec},
 		&Job{"https://www.douyu.com/directory/game/LOL", globalSpec},
 		&Job{"https://www.douyu.com/directory/game/CSGO", globalSpec},
